@@ -26,4 +26,4 @@
 8.  Click the script option then copy the following highlighted text on your end
 ![alt text](https://i.ibb.co/Nm95hky/copyies.png)
 9. Finally copy the information on the firebase_connector.js on the project folder on the corresponding variable(firebaseConfig)
-
+![alt text](https://raw.githubusercontent.com/Inferior-Programmer/FaceRecognitionSample/master/finals_text.PNG)
