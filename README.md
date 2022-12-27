@@ -1,5 +1,6 @@
 ﻿# FaceRecognition-Sample 
  
  
-## To Start with the Actual Code One Can Just Run the Code on VSCode Live Server 
+## To Start Execution of the Code Follow the Steps Below
 1. Install VSCODE
+2. Install the Extension 
