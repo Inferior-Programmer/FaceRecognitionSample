@@ -200,12 +200,12 @@ async function onStart(){
         var username = getCookie("username"); 
         var password = getCookie("password");
         if(username === null){
-            document.body.innerHTML = document.getElementById("toCopy").innerHTML;
+            window.location.href = '/login.html';
         }
         else{
             var trying = await validateUser(username, password);
             if(!trying){
-                document.body.innerHTML = document.getElementById("toCopy").innerHTML;
+                window.location.href = '/login.html';
             }
         }
     }
