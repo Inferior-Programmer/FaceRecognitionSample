@@ -9,7 +9,8 @@
 ![alt text](https://i.ibb.co/sKdZpy9/Image2.png)
 3. Open the Folder of the Downloaded Project from Github on VSCODE and Click Open with LiveServer on the login.html 
 ![alt text](https://i.ibb.co/HqTdqQq/Imag3.png)
-### Note Once Logged in and the play button is clicked please wait for "Mode Loading to finish" 
+### Note Once Logged in and the play button is clicked please wait for "Model Loading to finish" to change text
+### Model Loading tends to cause the webpage to be initially laggy but once model is loaded lagging is fixed
 ![alt text](https://i.ibb.co/Gctf5rK/model-loading-example.png)
 
 ## For the Setup of your own firebase database
