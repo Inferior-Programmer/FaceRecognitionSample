@@ -54,6 +54,19 @@ const handleStream = (stream) => {
   streamStarted = true;
 };
 
+async function loadTableImmediately(){
+  let innerTableCode = ""; 
+  var allDates = await getAllNumberOfFaces(getCookie("username"))
+  innerTableCode += "<tr><th>Date</th><th style='width:300px; display: block;'>Number Of People</th></tr>"
+  var keyss = Object.keys(allDates)
+  for(let k = 0; k<keyss.length; k++){
+    innerTableCode += "<tr><th>" + keyss[k] + "</th><th>" + allDates[keyss[k]].numPeople + "</th></tr>"
+  }
+  document.getElementById("table-holder").style.width = '25px';
+  document.getElementById("table-holder").style.border = '1px solid black';
+  document.getElementById("table-holder").innerHTML = innerTableCode;
+}
+
 
 var storer = []
 let currDate = new Date().toJSON().slice(0, 10);
@@ -93,15 +106,25 @@ video.addEventListener('play',  async () => {
     faceapi.draw.drawDetections(canvas, resizedDetections)
     console.log((oldFaces + newFaces))
     document.getElementById("updateText").innerText = "Number of people entered: " + (oldFaces + newFaces).toString()
+    let innerTableCode = ""; 
+    var allDates = await getAllNumberOfFaces(getCookie("username"))
+    innerTableCode += "<tr><th>Date</th><th style='width:300px; display: block;'>Number Of People</th></tr>"
+    var keyss = Object.keys(allDates)
+    for(let k = 0; k<keyss.length; k++){
+      innerTableCode += "<tr><th>" + keyss[k] + "</th><th>" + allDates[keyss[k]].numPeople + "</th></tr>"
+    }
+    document.getElementById("table-holder").style.width = '25px';
+    document.getElementById("table-holder").style.border = '1px solid black';
+    document.getElementById("table-holder").innerHTML = innerTableCode;
     if(newFaces > 0){
       oldFaces += newFaces;
       writeNumberOfFaces(currDate,getCookie("username") ,oldFaces)
-    }
-    
+    }   
   }, 50)
 })
 
 getCameraSelection();
 
+loadTableImmediately();
 
 document.getElementById("welcomes").innerText = "Welcome " + getCookie("username");

@@ -12,21 +12,26 @@ import {
 // Replace this with your config object from your firebase console
 // Find yours under Project Settings > General > Your apps > SDK Setup and configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyA-R2vAqJsQZNm60lBsWQfOr02R8w9iMWo",
 
-    authDomain: "appdetection-7417c.firebaseapp.com",
+  apiKey: "AIzaSyBAmDXaPHNNNez_u_U6rkuElqStUq_xVDw",
 
-    databaseURL: "https://appdetection-7417c-default-rtdb.firebaseio.com",
+  authDomain: "mememssss.firebaseapp.com",
 
-    projectId: "appdetection-7417c",
+  databaseURL: "https://mememssss-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-    storageBucket: "appdetection-7417c.appspot.com",
+  projectId: "mememssss",
 
-    messagingSenderId: "838883828979",
+  storageBucket: "mememssss.appspot.com",
 
-    appId: "1:838883828979:web:3add37df427704fbe18386",
+  messagingSenderId: "318066184323",
+
+  appId: "1:318066184323:web:48f05cc7982ed26bbacbb6",
+
+  measurementId: "G-81J3H30WL6"
 
 };
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -76,7 +81,20 @@ async function getNumberOfFaces(date,username){
     return datas;
   }
 
+
+  async function getAllNumberOfFaces(username){
+    const dbRef = ref(getDatabase());
+  
+    var datas = await get(child(dbRef, 'data/'+username)).then((snapshot) => {
+      if (snapshot.exists()) {
+        return snapshot.val();
+      }  
+    });
+    return datas;
+  }
+
+  window.getAllNumberOfFaces = getAllNumberOfFaces
   window.getUserData = getUserData;
   window.writeUserData = writeUserData;
 
-  export{getNumberOfFaces,writeUserData,getUserData,writeNumberOfFaces}
+  export{getNumberOfFaces,writeUserData, getAllNumberOfFaces,getUserData,writeNumberOfFaces}
