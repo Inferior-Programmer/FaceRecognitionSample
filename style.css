@@ -1,0 +1,236 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* General styles */
+body {
+  background-color: #f3f3f3;
+  font-family: sans-serif;
+}
+
+/* Video and screenshot container */
+.display-cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 5% auto;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Video element */
+video {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Screenshot image */
+.screenshot-image {
+  width: 150px;
+  height: 90px;
+  border-radius: 4px;
+  border: 2px solid whitesmoke;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  background: white;
+}
+
+/* Video options */
+.video-options {
+  position: absolute;
+  left: 20px;
+  top: 30px;
+}
+
+/* Controls */
+.controls {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  display: flex;
+}
+
+/* Control buttons */
+.controls > button {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border-radius: 100%;
+  margin: 0 6px;
+  background: #fff;
+  border: 1px solid #ddd;
+  transition: all 0.2s;
+}
+
+.controls > button:hover {
+  background-color: #f3f3f3;
+}
+
+.controls > button:hover svg {
+  color: #333;
+}
+
+@media (min-width: 300px) and (max-width: 400px) {
+  .controls {
+    flex-direction: column;
+  }
+
+  .controls button {
+    margin: 5px 0 !important;
+  }
+}
+
+/* Canvas element */
+canvas {
+  position: absolute;
+}
+
+/* Control button icons */
+.controls > button > svg {
+  height: 20px;
+  width: 18px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Play button */
+.controls button:nth-child(1) {
+  border: 2px solid #d2002e;
+}
+
+.controls button:nth-child(1) svg {
+  color: #d2002e;
+}
+
+/* Stop button */
+.controls button:nth-child(2) {
+  border: 2px solid #008496;
+}
+
+.controls button:nth-child(2) svg {
+  color: #008496;
+  }
+  
+  
+ /* Record button */
+.controls button:nth-child(3) {
+  border: 2px solid #00b541;
+}
+
+.controls button:nth-child(3) svg {
+  color: #00b541;
+}
+
+
+/* new content */
+.link-button{
+    float: right;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+ 
+}
+.login-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+	font-family: sans-serif;
+	background-color: #81D4FA;
+	height: 100%;
+ }
+
+.login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+      max-width: 300px;
+      margin: 0 auto;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      animation: appear 0.5s ease-in-out;
+      background-color: white; /* White background color for the form */
+}
+
+@keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+ }
+
+.login-form h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border 0.3s;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="password"]:focus {
+      border: 1px solid #4CAF50;
+      outline: none;
+}
+
+.login-form input[type="submit"] {
+      width: 100%;
+      height: 40px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+ }
+
+.login-form input[type="submit"]:hover {
+      background-color: #45a049;
+}
+
+.login-form .sign-up {
+      margin-top: 20px;
+      font-size: 14px;
+}
+
+.login-form .sign-up a {
+      color: #4CAF50;
+      text-decoration: none;
+      transition: color 0.3s;
+}
+
+.login-form .sign-up a:hover {
+      color: #45a049;
+}

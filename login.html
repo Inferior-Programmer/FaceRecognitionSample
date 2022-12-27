@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="style.css">
+	<script type="module" src="firebase_connector.js"></script>
+	<script type="module" src="userUtilities.js"></script>
+</head>
+<body>
+<div id = "login-container" style="height: 100%;">
+  <div class="login-container">
+    <div class="login-form" action="/login" method="post">
+    <h1>Login</h1>
+    <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+	<input class="input100" id="loginUser" type="text" name="username" placeholder="Username">
+	<span class="focus-input100"></span>
+	<span class="symbol-input100">
+	<i class="fa fa-envelope" aria-hidden="true"></i>
+	</span>
+	</div>
+	<div class="wrap-input100 validate-input" data-validate = "Password is required">
+	<input class="input100" id="loginPassword" type="password" name="pass" placeholder="Password">
+	<span class="focus-input100"></span>
+	<span class="symbol-input100">
+	<i class="fa fa-lock" aria-hidden="true"></i>
+	</span>
+	</div>
+	<div class="container-login100-form-btn">
+	<button onClick="login()" class="login100-form-btn">
+	Login
+	</button>
+	</div>
+      <div class="sign-up">
+		<div id="error-message-login" style="color: red;"></div>
+        <br> Don't have an account? <button class="link-button" onclick="showElement('signup-container'); hideElement('login-container')"> Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id = "signup-container" style="display: none; height: 100%;" >
+  <div class="login-container">
+	<div class="login-form"  method="post">
+		<h1>Sign-up</h1>
+		<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+		<input class="input100" id="signupUser" type="text" name="usernameS" placeholder="Username">
+		<span class="focus-input100"></span>
+		<span class="symbol-input100">
+		<i class="fa fa-envelope" aria-hidden="true"></i>
+		</span>
+		</div>
+	
+		<div class="wrap-input100 validate-input" data-validate = "Password is required">
+		<input class="input100" id="signupPassword" type="password" name="passS" placeholder="Password">
+		<span class="focus-input100"></span>
+		<span class="symbol-input100">
+		<i class="fa fa-lock" aria-hidden="true"></i>
+		</span>
+		</div>
+		<div class="container-login100-form-btn">
+		<button id="sign-btn" onclick="signup()" class="login100-form-btn">
+		sign-up
+		</button>
+		</div>
+		  <div class="sign-up">
+			<div id="error-message-signup" style="color: red;"></div>
+			<br> <div id="successful-message-signup" style="color: green;"></div>
+			<br> Already have an account? <button class="link-button" onclick="showElement('login-container'); hideElement('signup-container')">Login</button>
+			
+		  </div>
+		  
+		</div>
+  </div>
+</div>
+</body>
+
+</html>
+

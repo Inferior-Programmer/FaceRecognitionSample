@@ -1,0 +1,15 @@
+if(detections.length > 0 && detections.length >= lastNumberOfDetections + 1){
+      
+    var newStorer = []
+    for(let i = 0; i< detections.length; i++){
+      newStorer.push(detections[i].descriptor);
+      newFaces++;
+      for(let j = 0; j<storer.length; j++){
+        if(faceapi.utils.round(faceapi.euclideanDistance(newStorer[i], storer[j])) < 0.65){
+          newFaces--;
+          break;  
+        }
+      }
+    }
+    storer = newStorer;
+  }
